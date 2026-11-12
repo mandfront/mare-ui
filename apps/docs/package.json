@@ -1,0 +1,38 @@
+{
+  "name": "docs",
+  "private": true,
+  "description": "Storybook do Maré UI: documentação viva, testes de interação e de acessibilidade, e servidor MCP.",
+  "type": "module",
+  "scripts": {
+    "dev": "storybook dev -p 6006 --no-open",
+    "build": "storybook build -o storybook-static",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@mare-ui/react": "workspace:*",
+    "@mare-ui/tokens": "workspace:*",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "@storybook/addon-a11y": "^10.6.6",
+    "@storybook/addon-docs": "^10.6.6",
+    "@storybook/addon-mcp": "^10.6.6",
+    "@storybook/addon-vitest": "^10.6.6",
+    "@storybook/react-vite": "^10.6.6",
+    "@tailwindcss/vite": "^4.3.5",
+    "@types/node": "^24.19.2",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.3.0",
+    "@vitest/browser-playwright": "^5.1.0",
+    "playwright": "^1.65.0",
+    "storybook": "^10.6.6",
+    "tailwindcss": "^4.3.5",
+    "typescript": "~6.0.3",
+    "vite": "^8.3.7",
+    "vitest": "^5.1.0"
+  }
+}
