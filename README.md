@@ -5,7 +5,7 @@
 
 Design system multi-marca: uma base única de design tokens e componentes React acessíveis que servem a várias marcas ao mesmo tempo. Trocar de marca é trocar valores de tokens, nunca reescrever componentes.
 
-> **Em construção.** A fundação do repositório e os [design tokens](packages/tokens) estão prontos. O Storybook e os componentes entram nas próximas etapas do [roteiro](#roteiro).
+> **Em construção.** Fundação, [design tokens](packages/tokens), Storybook e o primeiro componente ([Button](packages/react)) estão prontos. Os demais componentes entram nas próximas etapas do [roteiro](#roteiro).
 
 ## Princípios
 
@@ -22,6 +22,8 @@ mare-ui/
 ├─ packages/
 │  ├─ tokens/        # design tokens (formato W3C/DTCG)
 │  └─ react/         # componentes React
+├─ apps/
+│  └─ docs/          # Storybook: documentação, testes no navegador e MCP
 ├─ docs/decisions/   # registros de decisões de arquitetura (ADRs)
 └─ .github/          # CI, templates de PR e de issue
 ```
@@ -52,7 +54,7 @@ pnpm check   # formato, lint, tipos, testes e build
 
 - [x] Fundação: monorepo, lint, tipos, testes, hooks de Git, CI e decisões registradas
 - [x] Tokens: formato DTCG, Style Dictionary, temas claro e escuro e marcas, com contraste testado
-- [ ] Storybook publicado, com testes de interação, acessibilidade e MCP
+- [x] Storybook com testes de interação, acessibilidade e MCP
 - [ ] Componentes: Button, TextField, Checkbox, Switch, Badge, Card, Tabs, Alert, Avatar, Dialog
 - [ ] Primeira versão no npm e no registry shadcn
 - [ ] App de exemplo montado só com o design system
