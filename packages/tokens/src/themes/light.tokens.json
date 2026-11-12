@@ -1,0 +1,159 @@
+{
+  "color": {
+    "$type": "color",
+    "surface": {
+      "$value": "{palette.stone.50}",
+      "$description": "Fundo da página."
+    },
+    "surface-raised": {
+      "$value": "{palette.white}",
+      "$description": "Cards, campos, diálogos e menus sobre o surface."
+    },
+    "surface-sunken": {
+      "$value": "{palette.stone.100}",
+      "$description": "Áreas recuadas: trilho de abas, fundo de código, linhas alternadas."
+    },
+    "line": {
+      "$value": "{palette.stone.150}",
+      "$description": "Bordas de cards e divisórias. Não usar como borda de campo (ver line-strong)."
+    },
+    "line-strong": {
+      "$value": "{palette.stone.400}",
+      "$description": "Borda de campos, checkbox e switch desligado: 3:1 sobre surface e surface-raised."
+    },
+    "ink": {
+      "$value": "{palette.slate.800}",
+      "$description": "Texto principal sobre surface, surface-raised e surface-sunken."
+    },
+    "ink-muted": {
+      "$value": "{palette.slate.550}",
+      "$description": "Texto de apoio, dicas e legendas sobre surface e surface-raised (4.5:1)."
+    },
+    "primary": {
+      "$value": "{palette.teal.550}",
+      "$description": "Ação principal, links e estado selecionado. Uma ação primária por tela."
+    },
+    "primary-hover": {
+      "$value": "{palette.teal.600}",
+      "$description": "Hover e pressed da ação primária."
+    },
+    "primary-soft": {
+      "$value": "{palette.teal.50}",
+      "$description": "Fundo suave de seleção, badge info e botão soft. Texto em primary-strong."
+    },
+    "primary-strong": {
+      "$value": "{palette.teal.650}",
+      "$description": "Texto sobre primary-soft."
+    },
+    "on-primary": {
+      "$value": "{palette.white}",
+      "$description": "Texto e ícones sobre primary e primary-hover."
+    },
+    "sand": {
+      "$value": "{palette.sand.150}",
+      "$description": "Cor de destaque da marca (areia). Só preenchimento e ilustração, nunca texto."
+    },
+    "coral": {
+      "$value": "{palette.coral.350}",
+      "$description": "Acento caloroso (pôr do sol). Preenchimento e ilustração; texto sobre ele é ink fixo de marca escura."
+    },
+    "success": {
+      "$value": "{palette.green.500}",
+      "$description": "Confirmação e status positivo. Texto sobre ele: on-status."
+    },
+    "warning": {
+      "$value": "{palette.amber.500}",
+      "$description": "Atenção. Texto sobre ele: on-status."
+    },
+    "danger": {
+      "$value": "{palette.red.500}",
+      "$description": "Erro e ação destrutiva. Texto sobre ele: on-status; como texto, só sobre surface e surface-raised."
+    },
+    "on-status": {
+      "$value": "{palette.white}",
+      "$description": "Texto sobre success, warning e danger."
+    },
+    "success-soft": {
+      "$value": "{palette.green.50}",
+      "$description": "Fundo do alerta e badge de sucesso; texto em ink."
+    },
+    "warning-soft": {
+      "$value": "{palette.amber.50}",
+      "$description": "Fundo do alerta e badge de atenção; texto em ink."
+    },
+    "danger-soft": {
+      "$value": "{palette.red.50}",
+      "$description": "Fundo do alerta e badge de erro; texto em ink."
+    },
+    "focus": {
+      "$value": "{color.primary}",
+      "$description": "Anel de foco do teclado: 2px de surface e depois 2px de focus."
+    },
+    "overlay": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [0.0784, 0.1294, 0.1686],
+        "alpha": 0.48,
+        "hex": "#14212b"
+      },
+      "$description": "Fundo atrás de diálogos."
+    }
+  },
+  "shadow": {
+    "$type": "shadow",
+    "sm": {
+      "$value": {
+        "color": {
+          "colorSpace": "srgb",
+          "components": [0.0784, 0.1294, 0.1686],
+          "alpha": 0.08,
+          "hex": "#14212b"
+        },
+        "offsetX": {
+          "value": 0,
+          "unit": "px"
+        },
+        "offsetY": {
+          "value": 1,
+          "unit": "px"
+        },
+        "blur": {
+          "value": 2,
+          "unit": "px"
+        },
+        "spread": {
+          "value": 0,
+          "unit": "px"
+        }
+      },
+      "$description": "Botões e cards em repouso."
+    },
+    "lg": {
+      "$value": {
+        "color": {
+          "colorSpace": "srgb",
+          "components": [0.0784, 0.1294, 0.1686],
+          "alpha": 0.16,
+          "hex": "#14212b"
+        },
+        "offsetX": {
+          "value": 0,
+          "unit": "px"
+        },
+        "offsetY": {
+          "value": 16,
+          "unit": "px"
+        },
+        "blur": {
+          "value": 40,
+          "unit": "px"
+        },
+        "spread": {
+          "value": 0,
+          "unit": "px"
+        }
+      },
+      "$description": "Diálogos e menus flutuantes."
+    }
+  }
+}
