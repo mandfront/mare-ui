@@ -24,9 +24,12 @@ O `styles.css` já traz os tokens, os temas e as marcas, e só os utilitários q
 | `Avatar`         | Pessoa ou marca, com foto ou iniciais.                         |
 | `Badge`          | Uma ou duas palavras de status.                                |
 | `Button`         | Dispara uma ação. Variantes, tamanhos, estado de carregamento. |
+| `Alert`          | Mensagem na página, sem bloquear.                              |
 | `Card`           | Agrupa conteúdo relacionado, montado por partes.               |
 | `Checkbox`       | Escolha independente que vale ao enviar o formulário.          |
+| `Dialog`         | Interrompe o fluxo para uma decisão.                           |
 | `Switch`         | Liga ou desliga algo que vale na hora.                         |
+| `Tabs`           | Alterna entre vistas do mesmo conteúdo.                        |
 | `TextField`      | Campo de texto com rótulo, dica e erro acessíveis.             |
 | `VisuallyHidden` | Texto só para leitores de tela.                                |
 
