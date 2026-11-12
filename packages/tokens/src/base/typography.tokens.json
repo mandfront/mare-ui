@@ -1,0 +1,192 @@
+{
+  "font": {
+    "$type": "fontFamily",
+    "sans": {
+      "$value": ["Plus Jakarta Sans", "system-ui", "-apple-system", "Segoe UI", "sans-serif"],
+      "$description": "Família única da interface, do 400 ao 800."
+    },
+    "mono": {
+      "$value": ["JetBrains Mono", "ui-monospace", "SF Mono", "Menlo", "monospace"],
+      "$description": "Código."
+    }
+  },
+  "text": {
+    "$type": "typography",
+    "display-xl": {
+      "$value": {
+        "fontFamily": "{font.sans}",
+        "fontSize": {
+          "value": 3.5,
+          "unit": "rem"
+        },
+        "fontWeight": 800,
+        "letterSpacing": {
+          "value": -0.02,
+          "unit": "em"
+        },
+        "lineHeight": 1.07
+      },
+      "$description": "Hero de landing. Uma vez por página."
+    },
+    "display": {
+      "$value": {
+        "fontFamily": "{font.sans}",
+        "fontSize": {
+          "value": 2.5,
+          "unit": "rem"
+        },
+        "fontWeight": 700,
+        "letterSpacing": {
+          "value": -0.015,
+          "unit": "em"
+        },
+        "lineHeight": 1.2
+      },
+      "$description": "Títulos de seção grandes."
+    },
+    "h1": {
+      "$value": {
+        "fontFamily": "{font.sans}",
+        "fontSize": {
+          "value": 2,
+          "unit": "rem"
+        },
+        "fontWeight": 700,
+        "letterSpacing": {
+          "value": -0.01,
+          "unit": "em"
+        },
+        "lineHeight": 1.25
+      },
+      "$description": "Título da página."
+    },
+    "h2": {
+      "$value": {
+        "fontFamily": "{font.sans}",
+        "fontSize": {
+          "value": 1.5,
+          "unit": "rem"
+        },
+        "fontWeight": 600,
+        "letterSpacing": {
+          "value": 0,
+          "unit": "em"
+        },
+        "lineHeight": 1.33
+      },
+      "$description": "Seções dentro da página."
+    },
+    "h3": {
+      "$value": {
+        "fontFamily": "{font.sans}",
+        "fontSize": {
+          "value": 1.25,
+          "unit": "rem"
+        },
+        "fontWeight": 600,
+        "letterSpacing": {
+          "value": 0,
+          "unit": "em"
+        },
+        "lineHeight": 1.4
+      },
+      "$description": "Título de card e de diálogo."
+    },
+    "body-lg": {
+      "$value": {
+        "fontFamily": "{font.sans}",
+        "fontSize": {
+          "value": 1.125,
+          "unit": "rem"
+        },
+        "fontWeight": 400,
+        "letterSpacing": {
+          "value": 0,
+          "unit": "em"
+        },
+        "lineHeight": 1.55
+      },
+      "$description": "Texto de abertura e landing."
+    },
+    "body": {
+      "$value": {
+        "fontFamily": "{font.sans}",
+        "fontSize": {
+          "value": 1,
+          "unit": "rem"
+        },
+        "fontWeight": 400,
+        "letterSpacing": {
+          "value": 0,
+          "unit": "em"
+        },
+        "lineHeight": 1.5
+      },
+      "$description": "Texto padrão de interface."
+    },
+    "small": {
+      "$value": {
+        "fontFamily": "{font.sans}",
+        "fontSize": {
+          "value": 0.875,
+          "unit": "rem"
+        },
+        "fontWeight": 400,
+        "letterSpacing": {
+          "value": 0,
+          "unit": "em"
+        },
+        "lineHeight": 1.43
+      },
+      "$description": "Dicas, metadados, botões pequenos."
+    },
+    "label": {
+      "$value": {
+        "fontFamily": "{font.sans}",
+        "fontSize": {
+          "value": 0.875,
+          "unit": "rem"
+        },
+        "fontWeight": 600,
+        "letterSpacing": {
+          "value": 0,
+          "unit": "em"
+        },
+        "lineHeight": 1.43
+      },
+      "$description": "Rótulos de campo e botões."
+    },
+    "caption": {
+      "$value": {
+        "fontFamily": "{font.sans}",
+        "fontSize": {
+          "value": 0.75,
+          "unit": "rem"
+        },
+        "fontWeight": 500,
+        "letterSpacing": {
+          "value": 0.01,
+          "unit": "em"
+        },
+        "lineHeight": 1.33
+      },
+      "$description": "Badges e legendas. Menor tamanho do sistema."
+    },
+    "code": {
+      "$value": {
+        "fontFamily": "{font.mono}",
+        "fontSize": {
+          "value": 0.875,
+          "unit": "rem"
+        },
+        "fontWeight": 400,
+        "letterSpacing": {
+          "value": 0,
+          "unit": "em"
+        },
+        "lineHeight": 1.43
+      },
+      "$description": "Código inline e blocos de código."
+    }
+  }
+}

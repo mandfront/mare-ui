@@ -4,5 +4,31 @@
   "private": true,
   "description": "Design tokens do Maré UI (cores, tipografia, espaçamento, raios) no formato W3C.",
   "license": "MIT",
-  "type": "module"
+  "type": "module",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./tokens.css": "./dist/tokens.css",
+    "./theme.css": "./dist/theme.css",
+    "./tokens.json": "./dist/tokens.json"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "build": "node scripts/build.js",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "devDependencies": {
+    "style-dictionary": "^5.8.0",
+    "vitest": "^5.1.0"
+  }
 }

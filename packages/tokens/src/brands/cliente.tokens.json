@@ -1,0 +1,51 @@
+{
+  "$description": "Marca de exemplo com cores provisórias: sobrescreve só os tokens semânticos que mudam.",
+  "color": {
+    "$type": "color",
+    "surface": {
+      "$value": "{palette.mata.50}"
+    },
+    "surface-raised": {
+      "$value": "{palette.white}"
+    },
+    "surface-sunken": {
+      "$value": "{palette.mata.100}"
+    },
+    "line": {
+      "$value": "{palette.mata.200}"
+    },
+    "line-strong": {
+      "$value": "{palette.mata.400}"
+    },
+    "ink": {
+      "$value": "{palette.mata.750}"
+    },
+    "ink-muted": {
+      "$value": "{palette.mata.550}"
+    },
+    "primary": {
+      "$value": "{palette.mata.600}"
+    },
+    "primary-hover": {
+      "$value": "{palette.mata.650}"
+    },
+    "primary-soft": {
+      "$value": "{palette.mata.150}"
+    },
+    "primary-strong": {
+      "$value": "{palette.mata.700}"
+    },
+    "on-primary": {
+      "$value": "{palette.white}"
+    },
+    "sand": {
+      "$value": "{palette.sand.200}"
+    },
+    "coral": {
+      "$value": "{palette.coral.400}"
+    },
+    "focus": {
+      "$value": "{color.primary}"
+    }
+  }
+}

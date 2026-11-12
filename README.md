@@ -5,7 +5,7 @@
 
 Design system multi-marca: uma base única de design tokens e componentes React acessíveis que servem a várias marcas ao mesmo tempo. Trocar de marca é trocar valores de tokens, nunca reescrever componentes.
 
-> **Em construção.** A fundação do repositório está pronta (monorepo, qualidade de código, CI). Tokens e componentes entram nas próximas etapas do [roteiro](#roteiro).
+> **Em construção.** A fundação do repositório e os [design tokens](packages/tokens) estão prontos. O Storybook e os componentes entram nas próximas etapas do [roteiro](#roteiro).
 
 ## Princípios
 
@@ -51,7 +51,7 @@ pnpm check   # formato, lint, tipos, testes e build
 ## Roteiro
 
 - [x] Fundação: monorepo, lint, tipos, testes, hooks de Git, CI e decisões registradas
-- [ ] Tokens: formato DTCG, Style Dictionary, temas claro e escuro e marcas
+- [x] Tokens: formato DTCG, Style Dictionary, temas claro e escuro e marcas, com contraste testado
 - [ ] Storybook publicado, com testes de interação, acessibilidade e MCP
 - [ ] Componentes: Button, TextField, Checkbox, Switch, Badge, Card, Tabs, Alert, Avatar, Dialog
 - [ ] Primeira versão no npm e no registry shadcn
