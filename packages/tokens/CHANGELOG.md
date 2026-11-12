@@ -1,5 +1,11 @@
 # @mare-ui/tokens
 
+## 0.1.1
+
+### Patch Changes
+
+- README da página do npm com a instrução de instalação, no lugar do aviso de pacote não publicado.
+
 ## 0.1.0
 
 ### Minor Changes
