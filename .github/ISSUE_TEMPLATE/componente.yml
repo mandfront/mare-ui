@@ -1,0 +1,27 @@
+name: Novo componente ou melhoria
+description: Proposta de componente, variante ou token.
+title: 'feat: '
+labels: [enhancement]
+body:
+  - type: textarea
+    id: need
+    attributes:
+      label: Necessidade
+      description: Qual problema de interface isso resolve e onde será usado.
+    validations:
+      required: true
+  - type: textarea
+    id: api
+    attributes:
+      label: API proposta
+      description: Props, variantes e partes. Prefira composição a muitas props.
+  - type: textarea
+    id: a11y
+    attributes:
+      label: Acessibilidade
+      description: Papel ARIA, comportamento por teclado e referências (WAI-ARIA APG, Base UI).
+  - type: textarea
+    id: refs
+    attributes:
+      label: Referências
+      description: Como outros design systems resolvem.
