@@ -1,9 +1,25 @@
 {
   "name": "@mare-ui/react",
   "version": "0.0.0",
-  "private": true,
   "description": "Componentes React acessíveis do Maré UI.",
   "license": "MIT",
+  "author": "Amanda Caraça",
+  "homepage": "https://docs-rosy-two-80.vercel.app",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mandfront/mare-ui.git",
+    "directory": "packages/react"
+  },
+  "bugs": "https://github.com/mandfront/mare-ui/issues",
+  "keywords": [
+    "design-system",
+    "react",
+    "components",
+    "accessibility",
+    "tailwindcss",
+    "base-ui",
+    "react-server-components"
+  ],
   "type": "module",
   "sideEffects": [
     "**/*.css"
@@ -18,6 +34,9 @@
   "files": [
     "dist"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "tsdown && tailwindcss -i src/styles.css -o dist/styles.css --minify",
     "dev": "tsdown --watch",
