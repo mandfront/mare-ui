@@ -1,4 +1,10 @@
+<p align="center">
+  <img src=".github/assets/capa.png" alt="Maré UI: design tokens e componentes React acessíveis, multi-marca" width="100%">
+</p>
+
 # Maré UI
+
+**Português** · [English](README.en.md)
 
 [![CI](https://github.com/mandfront/mare-ui/actions/workflows/ci.yml/badge.svg)](https://github.com/mandfront/mare-ui/actions/workflows/ci.yml)
 [![Storybook](https://img.shields.io/badge/storybook-docs-0e6670.svg)](https://docs-rosy-two-80.vercel.app)
@@ -8,7 +14,7 @@
 
 Design system multi-marca: uma base única de design tokens e componentes React acessíveis que servem a várias marcas ao mesmo tempo. Trocar de marca é trocar valores de tokens, nunca reescrever componentes.
 
-> **Em construção.** Fundação, [design tokens](packages/tokens), Storybook e os primeiros [componentes](packages/react) estão prontos. Os demais entram nas próximas etapas do [roteiro](#roteiro).
+> **Em construção.** Fundação, [design tokens](packages/tokens), Storybook, os primeiros [componentes](packages/react) e um app de exemplo estão prontos. Os demais entram nas próximas etapas do [roteiro](#roteiro).
 
 ## Princípios
 
