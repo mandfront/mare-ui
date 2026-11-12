@@ -25,6 +25,9 @@ O `styles.css` já traz os tokens, os temas e as marcas, e só os utilitários q
 | `Badge`          | Uma ou duas palavras de status.                                |
 | `Button`         | Dispara uma ação. Variantes, tamanhos, estado de carregamento. |
 | `Card`           | Agrupa conteúdo relacionado, montado por partes.               |
+| `Checkbox`       | Escolha independente que vale ao enviar o formulário.          |
+| `Switch`         | Liga ou desliga algo que vale na hora.                         |
+| `TextField`      | Campo de texto com rótulo, dica e erro acessíveis.             |
 | `VisuallyHidden` | Texto só para leitores de tela.                                |
 
 Utilitários: `buttonVariants` (aparência de botão para links) e `cn` (junta classes e resolve conflitos de Tailwind conhecendo os nomes dos tokens).
