@@ -17,7 +17,7 @@
     "format:check": "prettier --check .",
     "check": "pnpm format:check && pnpm lint:root && pnpm registry:check && turbo run lint typecheck test build && pnpm check:packages",
     "prepare": "lefthook install",
-    "lint:root": "eslint scripts",
+    "lint:root": "eslint scripts .changeset",
     "check:packages": "pnpm --filter \"./packages/*\" exec publint --strict",
     "registry": "node scripts/build-registry.js",
     "registry:check": "node scripts/build-registry.js --check",
