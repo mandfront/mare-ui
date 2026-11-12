@@ -8,7 +8,10 @@ minimumReleaseAge: 4320
 
 # Scripts de instalação só rodam para os pacotes aprovados aqui.
 allowBuilds:
+  esbuild: true
   lefthook: true
+  # Binário nativo opcional do modo watch da CLI do Tailwind; o build não precisa dele.
+  '@parcel/watcher': false
 
 # O eslint-plugin-jsx-a11y 6.10 ainda declara suporte só até o ESLint 9, mas
 # funciona com o 10 (as regras são exercitadas no CI). Remover quando o plugin
