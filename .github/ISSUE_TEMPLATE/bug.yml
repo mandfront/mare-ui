@@ -1,0 +1,29 @@
+name: Bug
+description: Algo não funciona como deveria.
+title: 'fix: '
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: O que acontece
+      description: O comportamento atual e o que você esperava.
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Como reproduzir
+      description: Passos, trecho de código ou link.
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Versão do pacote
+      placeholder: '@mare-ui/react 0.1.0'
+  - type: input
+    id: env
+    attributes:
+      label: Navegador e sistema
+      placeholder: Chrome 142, macOS 26
