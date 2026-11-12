@@ -13,7 +13,7 @@ describe('Switch', () => {
 
   it('liga com clique na chave ou no rótulo e avisa a mudança', async () => {
     const user = userEvent.setup();
-    const onCheckedChange = vi.fn();
+    const onCheckedChange = vi.fn<(checked: boolean) => void>();
     render(<Switch label="Tema escuro" onCheckedChange={onCheckedChange} />);
 
     const control = screen.getByRole('switch', { name: 'Tema escuro' });
@@ -22,7 +22,7 @@ describe('Switch', () => {
 
     await user.click(screen.getByText('Tema escuro'));
     expect(control).not.toBeChecked();
-    expect(onCheckedChange.mock.calls).toEqual([[true], [false]]);
+    expect(onCheckedChange.mock.calls.map(([checked]) => checked)).toEqual([true, false]);
   });
 
   it('alterna pelo teclado', async () => {
@@ -37,13 +37,13 @@ describe('Switch', () => {
 
   it('pode ser controlado', async () => {
     const user = userEvent.setup();
-    const onCheckedChange = vi.fn();
+    const onCheckedChange = vi.fn<(checked: boolean) => void>();
     render(<Switch label="Tema escuro" checked onCheckedChange={onCheckedChange} />);
 
     const control = screen.getByRole('switch', { name: 'Tema escuro' });
     await user.click(control);
 
-    expect(onCheckedChange).toHaveBeenCalledWith(false);
+    expect(onCheckedChange).toHaveBeenCalledWith(false, expect.anything());
     expect(control).toBeChecked();
   });
 

@@ -1,6 +1,4 @@
-import { mergeProps } from '@base-ui/react/merge-props';
-import { useRender } from '@base-ui/react/use-render';
-import type { ComponentPropsWithRef, ReactElement } from 'react';
+import { cloneElement, type ComponentPropsWithRef, type ReactElement } from 'react';
 
 import { cn } from '../lib/cn';
 
@@ -36,21 +34,19 @@ export interface CardTitleProps extends Omit<ComponentPropsWithRef<'h3'>, 'class
    * Troca o elemento do título, para encaixar na hierarquia de títulos da página.
    * Padrão: `<h3>`. Exemplo: `render={<h2 />}`.
    */
-  render?: ReactElement;
+  render?: ReactElement<Record<string, unknown>>;
 }
 
 export function CardTitle({ className, render, ...props }: CardTitleProps) {
-  return useRender({
-    defaultTagName: 'h3',
-    render,
-    props: mergeProps<'h3'>(
-      {
-        'data-slot': 'card-title',
-        className: cn('text-h3 text-ink', className),
-      } as ComponentPropsWithRef<'h3'>,
-      props,
-    ),
-  });
+  const titleProps = {
+    'data-slot': 'card-title',
+    ...props,
+    className: cn('text-h3 text-ink', className),
+  };
+
+  // Sem hooks de propósito: o Card inteiro pode ser renderizado no servidor.
+  // eslint-disable-next-line jsx-a11y/heading-has-content -- o conteúdo vem em props.children
+  return render ? cloneElement(render, titleProps) : <h3 {...titleProps} />;
 }
 
 export function CardDescription({

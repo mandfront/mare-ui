@@ -29,7 +29,7 @@ export const Padrao: Story = {
     const checkbox = canvas.getByRole('checkbox', { name: 'Receber novidades por e-mail' });
     await userEvent.click(canvas.getByText('Receber novidades por e-mail'));
     await expect(checkbox).toBeChecked();
-    await expect(args.onCheckedChange).toHaveBeenCalledWith(true);
+    await expect(args.onCheckedChange).toHaveBeenCalledWith(true, expect.anything());
   },
 };
 

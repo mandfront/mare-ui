@@ -1,4 +1,6 @@
 export {
+  AlertDialog,
+  AlertDialogTrigger,
   Dialog,
   DialogClose,
   DialogContent,

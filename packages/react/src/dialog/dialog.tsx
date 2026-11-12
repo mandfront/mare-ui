@@ -1,3 +1,4 @@
+import { AlertDialog as BaseAlertDialog } from '@base-ui/react/alert-dialog';
 import { Dialog as BaseDialog } from '@base-ui/react/dialog';
 import type { ComponentPropsWithRef, ReactNode } from 'react';
 
@@ -17,16 +18,13 @@ export interface DialogProps {
  * Monte com DialogTrigger, DialogContent, DialogTitle, DialogDescription,
  * DialogFooter e DialogClose.
  */
-export function Dialog({ onOpenChange, ...props }: DialogProps) {
-  return (
-    <BaseDialog.Root
-      {...props}
-      onOpenChange={(open) => {
-        onOpenChange?.(open);
-      }}
-    />
-  );
+export function Dialog(props: DialogProps) {
+  return <BaseDialog.Root {...props} />;
 }
+
+// Nos gatilhos, o texto vai dentro do elemento de `render`, não como filho do
+// gatilho do Base UI: num Server Component o Button já chega renderizado, e
+// filhos passados por fora seriam descartados.
 
 /** Botão que abre o diálogo. Aceita as mesmas props visuais do Button. */
 export function DialogTrigger({
@@ -39,10 +37,42 @@ export function DialogTrigger({
   return (
     <BaseDialog.Trigger
       {...props}
-      render={<Button variant={variant} size={size} className={className} />}
-    >
-      {children}
-    </BaseDialog.Trigger>
+      render={
+        <Button variant={variant} size={size} className={className}>
+          {children}
+        </Button>
+      }
+    />
+  );
+}
+
+/**
+ * Diálogo de confirmação para ações destrutivas ou irreversíveis. É anunciado
+ * como alerta (`role="alertdialog"`) e não fecha com clique fora: a pessoa
+ * precisa escolher uma das ações. Use as mesmas partes do Dialog por dentro
+ * (DialogContent, DialogTitle, DialogDescription, DialogFooter, DialogClose).
+ */
+export function AlertDialog(props: DialogProps) {
+  return <BaseAlertDialog.Root {...props} />;
+}
+
+/** Botão que abre o AlertDialog. Aceita as mesmas props visuais do Button. */
+export function AlertDialogTrigger({
+  variant = 'secondary',
+  size,
+  className,
+  children,
+  ...props
+}: ButtonProps) {
+  return (
+    <BaseAlertDialog.Trigger
+      {...props}
+      render={
+        <Button variant={variant} size={size} className={className}>
+          {children}
+        </Button>
+      }
+    />
   );
 }
 
@@ -57,10 +87,12 @@ export function DialogClose({
   return (
     <BaseDialog.Close
       {...props}
-      render={<Button variant={variant} size={size} className={className} />}
-    >
-      {children}
-    </BaseDialog.Close>
+      render={
+        <Button variant={variant} size={size} className={className}>
+          {children}
+        </Button>
+      }
+    />
   );
 }
 

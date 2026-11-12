@@ -18,17 +18,8 @@ export interface TabsProps {
  * Alterna entre vistas do mesmo conteúdo. Teclado: setas para trocar de aba,
  * Home e End para a primeira e a última. Monte com TabsList, TabsTab e TabsPanel.
  */
-export function Tabs({ onValueChange, className, ...props }: TabsProps) {
-  return (
-    <BaseTabs.Root
-      data-slot="tabs"
-      {...props}
-      onValueChange={(value: unknown) => {
-        onValueChange?.(String(value));
-      }}
-      className={cn('flex flex-col', className)}
-    />
-  );
+export function Tabs({ className, ...props }: TabsProps) {
+  return <BaseTabs.Root data-slot="tabs" {...props} className={cn('flex flex-col', className)} />;
 }
 
 export interface TabsListProps {

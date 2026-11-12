@@ -29,7 +29,7 @@ export const Padrao: Story = {
     const control = canvas.getByRole('switch', { name: 'Tema escuro' });
     await userEvent.click(control);
     await expect(control).toBeChecked();
-    await expect(args.onCheckedChange).toHaveBeenCalledWith(true);
+    await expect(args.onCheckedChange).toHaveBeenCalledWith(true, expect.anything());
   },
 };
 

@@ -4,6 +4,8 @@ import { describe, expect, it, vi } from 'vitest';
 
 import { Button } from '../button';
 import {
+  AlertDialog,
+  AlertDialogTrigger,
   Dialog,
   DialogClose,
   DialogContent,
@@ -84,7 +86,62 @@ describe('Dialog', () => {
 
     await user.click(screen.getByRole('button', { name: 'Fechar' }));
 
-    expect(onOpenChange).toHaveBeenCalledWith(false);
+    expect(onOpenChange).toHaveBeenCalledWith(false, expect.anything());
     expect(screen.getByRole('dialog', { name: 'Controlado' })).toBeInTheDocument();
+  });
+});
+
+describe('AlertDialog', () => {
+  function ExcluirConta() {
+    return (
+      <AlertDialog>
+        <AlertDialogTrigger variant="danger">Excluir conta</AlertDialogTrigger>
+        <DialogContent>
+          <DialogTitle>Excluir a conta?</DialogTitle>
+          <DialogDescription>Todos os dados serão apagados.</DialogDescription>
+          <DialogFooter>
+            <DialogClose>Cancelar</DialogClose>
+            <Button variant="danger">Excluir</Button>
+          </DialogFooter>
+        </DialogContent>
+      </AlertDialog>
+    );
+  }
+
+  it('é anunciado como alerta, com título e descrição', async () => {
+    const user = userEvent.setup();
+    render(<ExcluirConta />);
+
+    await user.click(screen.getByRole('button', { name: 'Excluir conta' }));
+
+    const dialog = await screen.findByRole('alertdialog', { name: 'Excluir a conta?' });
+    expect(dialog).toHaveAccessibleDescription('Todos os dados serão apagados.');
+  });
+
+  it('não fecha com clique fora', async () => {
+    const user = userEvent.setup();
+    render(<ExcluirConta />);
+
+    await user.click(screen.getByRole('button', { name: 'Excluir conta' }));
+    await screen.findByRole('alertdialog');
+    const backdrop = document.querySelector('[data-slot="dialog-backdrop"]');
+    expect(backdrop).not.toBeNull();
+    if (backdrop) await user.click(backdrop);
+
+    expect(screen.getByRole('alertdialog')).toBeInTheDocument();
+  });
+
+  it('fecha pelo botão de cancelar e devolve o foco ao gatilho', async () => {
+    const user = userEvent.setup();
+    render(<ExcluirConta />);
+
+    const trigger = screen.getByRole('button', { name: 'Excluir conta' });
+    await user.click(trigger);
+    await user.click(await screen.findByRole('button', { name: 'Cancelar' }));
+
+    await waitFor(() => {
+      expect(screen.queryByRole('alertdialog')).not.toBeInTheDocument();
+    });
+    expect(trigger).toHaveFocus();
   });
 });
