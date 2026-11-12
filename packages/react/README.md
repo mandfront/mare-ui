@@ -2,7 +2,11 @@
 
 Componentes React acessíveis do Maré UI. Comportamento e acessibilidade vêm do [Base UI](https://base-ui.com); o visual vem dos [tokens](../tokens), aplicados com Tailwind CSS v4 e variantes tipadas com CVA.
 
-> Pacote ainda não publicado no npm. Requer React 19.
+Requer React 19.
+
+```bash
+npm install @mare-ui/react
+```
 
 ## Uso
 
@@ -52,7 +56,7 @@ A documentação completa, com exemplos interativos, está no [Storybook](https:
 
 ## Server Components
 
-Todos os componentes podem ser usados direto num componente de servidor do Next.js, sem `"use client"`. `buttonVariants`, `badgeVariants` e `cn` também podem ser chamados no servidor. O estado e a interação ficam no Base UI ([ADR 0009](../../docs/decisions/0009-server-components-sem-use-client.md)). O [app de exemplo](../../apps/playground) em Next.js confirma isso a cada PR: a página inteira é renderizada no servidor e testada no navegador com Playwright.
+Todos os componentes podem ser usados direto num componente de servidor do Next.js, sem `"use client"`. `buttonVariants`, `badgeVariants` e `cn` também podem ser chamados no servidor. Funções definidas por quem usa, como um `onClick` ou um `onOpenChange`, continuam exigindo um componente cliente no seu app, como acontece com qualquer elemento interativo. O estado e a interação ficam no Base UI ([ADR 0009](../../docs/decisions/0009-server-components-sem-use-client.md)). O [app de exemplo](../../apps/playground) em Next.js confirma isso a cada PR: a página inteira é renderizada no servidor e testada no navegador com Playwright.
 
 ## Estrutura de um componente
 

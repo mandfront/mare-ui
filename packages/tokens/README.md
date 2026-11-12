@@ -2,7 +2,9 @@
 
 Design tokens do Maré UI: cores, tipografia, espaçamento, raios, sombras e durações. A fonte é JSON no formato do [Design Tokens Community Group](https://www.designtokens.org/tr/2025.10/) (versão 2025.10), compilado com [Style Dictionary](https://styledictionary.com).
 
-> Pacote ainda não publicado no npm.
+```bash
+npm install @mare-ui/tokens
+```
 
 ## Camadas
 
