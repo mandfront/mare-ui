@@ -1,0 +1,20 @@
+@import 'tailwindcss';
+@import '@mare-ui/tokens/theme.css';
+
+/*
+ * Com Tailwind no projeto, o app gera os utilitários dos componentes lendo o
+ * código publicado do @mare-ui/react, em vez de importar o styles.css pronto.
+ * Assim existe uma só cópia do tema e das classes.
+ */
+@source '../node_modules/@mare-ui/react/dist';
+
+@theme inline {
+  --font-sans: var(--font-jakarta), system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, monospace;
+}
+
+body {
+  background-color: var(--color-surface);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}

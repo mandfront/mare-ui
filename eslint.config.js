@@ -7,7 +7,16 @@ import globals from 'globals';
 import tseslint from 'typescript-eslint';
 
 export default defineConfig(
-  globalIgnores(['**/dist/**', '**/coverage/**', '**/.turbo/**', '**/storybook-static/**']),
+  globalIgnores([
+    '**/dist/**',
+    '**/coverage/**',
+    '**/.turbo/**',
+    '**/storybook-static/**',
+    '**/.next/**',
+    '**/next-env.d.ts',
+    '**/playwright-report/**',
+    '**/test-results/**',
+  ]),
   js.configs.recommended,
   {
     files: ['**/*.{ts,tsx}'],
@@ -26,7 +35,7 @@ export default defineConfig(
     },
   },
   {
-    files: ['packages/react/**/*.{ts,tsx}'],
+    files: ['packages/react/**/*.{ts,tsx}', 'apps/playground/**/*.tsx'],
     extends: [reactHooks.configs.flat['recommended-latest'], jsxA11y.flatConfigs.strict],
     languageOptions: {
       globals: globals.browser,
