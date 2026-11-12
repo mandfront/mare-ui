@@ -26,22 +26,23 @@ mare-ui/
 │  ├─ tokens/        # design tokens (formato W3C/DTCG)
 │  └─ react/         # componentes React
 ├─ apps/
-│  └─ docs/          # Storybook: documentação, testes no navegador e MCP
+│  ├─ docs/          # Storybook: documentação, testes no navegador e MCP
+│  └─ playground/    # app de exemplo em Next.js, renderizado no servidor
 ├─ docs/decisions/   # registros de decisões de arquitetura (ADRs)
 └─ .github/          # CI, templates de PR e de issue
 ```
 
 ## Tecnologias
 
-| Área          | Escolha                                                       | Decisão                                                             |
-| ------------- | ------------------------------------------------------------- | ------------------------------------------------------------------- |
-| Monorepo      | pnpm workspaces + Turborepo                                   | [0002](docs/decisions/0002-monorepo-com-pnpm-e-turborepo.md)        |
-| Comportamento | Base UI                                                       | [0003](docs/decisions/0003-base-ui-como-camada-de-comportamento.md) |
-| Estilo        | Tailwind CSS v4 + CVA                                         | [0004](docs/decisions/0004-estilo-com-tailwind-v4-e-cva.md)         |
-| Tokens        | JSON no formato DTCG + Style Dictionary                       | [0005](docs/decisions/0005-tokens-no-formato-dtcg.md)               |
-| Distribuição  | npm + registry shadcn + Storybook com MCP                     | [0006](docs/decisions/0006-distribuicao-por-npm-e-registry.md)      |
-| Fluxo         | GitHub Flow, Conventional Commits, Changesets                 | [0007](docs/decisions/0007-fluxo-de-git-e-versionamento.md)         |
-| Qualidade     | TypeScript estrito, ESLint, Prettier, Vitest, Testing Library | [CONTRIBUTING](CONTRIBUTING.md)                                     |
+| Área          | Escolha                                                                   | Decisão                                                             |
+| ------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| Monorepo      | pnpm workspaces + Turborepo                                               | [0002](docs/decisions/0002-monorepo-com-pnpm-e-turborepo.md)        |
+| Comportamento | Base UI                                                                   | [0003](docs/decisions/0003-base-ui-como-camada-de-comportamento.md) |
+| Estilo        | Tailwind CSS v4 + CVA                                                     | [0004](docs/decisions/0004-estilo-com-tailwind-v4-e-cva.md)         |
+| Tokens        | JSON no formato DTCG + Style Dictionary                                   | [0005](docs/decisions/0005-tokens-no-formato-dtcg.md)               |
+| Distribuição  | npm + registry shadcn + Storybook com MCP                                 | [0006](docs/decisions/0006-distribuicao-por-npm-e-registry.md)      |
+| Fluxo         | GitHub Flow, Conventional Commits, Changesets                             | [0007](docs/decisions/0007-fluxo-de-git-e-versionamento.md)         |
+| Qualidade     | TypeScript estrito, ESLint, Prettier, Vitest, Testing Library, Playwright | [CONTRIBUTING](CONTRIBUTING.md)                                     |
 
 ## Rodar localmente
 
@@ -60,7 +61,7 @@ pnpm check   # formato, lint, tipos, testes e build
 - [x] Storybook com testes de interação, acessibilidade e MCP
 - [x] Componentes: Button, Badge, Card, Avatar, TextField, Checkbox, Switch, Tabs, Alert e Dialog
 - [ ] Primeira versão no npm e no registry shadcn (versão 0.1.0 preparada; falta publicar)
-- [ ] App de exemplo montado só com o design system
+- [x] App de exemplo em Next.js montado só com o design system, testado de ponta a ponta
 
 ## Contribuir
 
