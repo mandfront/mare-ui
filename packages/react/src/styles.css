@@ -1,0 +1,14 @@
+/*
+ * CSS compilado do @mare-ui/react: tokens, temas, marcas e os utilitários que
+ * os componentes usam. Não inclui o reset (preflight) do Tailwind, para não
+ * mudar o resto da página de quem consome.
+ */
+@layer theme, base, components, utilities;
+
+@import 'tailwindcss/theme.css' layer(theme);
+@import 'tailwindcss/utilities.css' layer(utilities);
+@import '@mare-ui/tokens/theme.css';
+
+@source './';
+@source not './**/*.test.*';
+@source not './**/*.stories.*';

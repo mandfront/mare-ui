@@ -57,6 +57,27 @@
         "unit": "rem"
       },
       "$description": "Respiro de hero e topo de página."
+    },
+    "control-sm": {
+      "$value": {
+        "value": 2,
+        "unit": "rem"
+      },
+      "$description": "Altura de controle pequeno (botão sm). 32px."
+    },
+    "control-md": {
+      "$value": {
+        "value": 2.5,
+        "unit": "rem"
+      },
+      "$description": "Altura de controle padrão (botão md, alvo de toque mínimo). 40px."
+    },
+    "control-lg": {
+      "$value": {
+        "value": 3,
+        "unit": "rem"
+      },
+      "$description": "Altura de controle grande (botão lg, campos). 48px."
     }
   },
   "radius": {

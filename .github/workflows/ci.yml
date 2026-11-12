@@ -25,6 +25,8 @@ jobs:
           cache: pnpm
       - name: Instalar dependências
         run: pnpm install --frozen-lockfile
+      - name: Navegador para os testes do Storybook
+        run: pnpm --filter docs exec playwright install --with-deps chromium
       - name: Formatação
         run: pnpm format:check
       - name: Lint, tipos, testes e build

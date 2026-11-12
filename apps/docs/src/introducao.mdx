@@ -1,0 +1,40 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Introdução" />
+
+# Maré UI
+
+Design system multi-marca: uma base única de design tokens e componentes React acessíveis que servem a várias marcas ao mesmo tempo. Trocar de marca é trocar valores de tokens, nunca reescrever componentes.
+
+Use os botões **Tema** e **Marca** na barra de ferramentas para ver cada componente no tema escuro e nas marcas de exemplo.
+
+## Instalação
+
+> Os pacotes ainda não estão publicados no npm.
+
+```bash
+pnpm add @mare-ui/react
+```
+
+```tsx
+import '@mare-ui/react/styles.css';
+import { Button } from '@mare-ui/react';
+
+export function Exemplo() {
+  return <Button>Publicar versão</Button>;
+}
+```
+
+Para trocar de tema ou de marca, use os atributos `data-theme="dark"` ou `data-brand="marego"` em qualquer elemento, normalmente o `<html>`.
+
+## Testes
+
+Cada história desta documentação também é um teste automatizado: o Storybook renderiza o componente num navegador real, roda as interações descritas e verifica a acessibilidade com o axe. Qualquer violação faz o CI falhar.
+
+## Para agentes de IA
+
+Este Storybook expõe um servidor MCP, para que assistentes de código consultem os componentes, as props e os exemplos em vez de inventá-los.
+
+## Código
+
+[github.com/mandfront/mare-ui](https://github.com/mandfront/mare-ui)

@@ -1,0 +1,10 @@
+@import 'tailwindcss';
+@import '@mare-ui/tokens/theme.css';
+
+@source '../../../packages/react/src';
+
+body {
+  background-color: var(--color-surface);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
