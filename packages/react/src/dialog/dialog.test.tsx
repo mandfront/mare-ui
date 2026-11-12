@@ -145,3 +145,29 @@ describe('AlertDialog', () => {
     expect(trigger).toHaveFocus();
   });
 });
+
+describe('props do Button nos gatilhos', () => {
+  it('repassa loading, disabled e type ao botão renderizado', () => {
+    render(
+      <Dialog>
+        <DialogTrigger loading>Salvando</DialogTrigger>
+        <DialogTrigger disabled>Indisponível</DialogTrigger>
+        <DialogClose type="submit">Enviar</DialogClose>
+      </Dialog>,
+    );
+    expect(screen.getByRole('button', { name: /Salvando/ })).toHaveAttribute('aria-busy', 'true');
+    expect(screen.getByRole('button', { name: 'Indisponível' })).toBeDisabled();
+    expect(screen.getByRole('button', { name: 'Enviar' })).toHaveAttribute('type', 'submit');
+  });
+
+  it('também no AlertDialogTrigger, sem vazar loading para o DOM', () => {
+    render(
+      <AlertDialog>
+        <AlertDialogTrigger loading>Excluindo</AlertDialogTrigger>
+      </AlertDialog>,
+    );
+    const trigger = screen.getByRole('button', { name: /Excluindo/ });
+    expect(trigger).toHaveAttribute('aria-busy', 'true');
+    expect(trigger).not.toHaveAttribute('loading');
+  });
+});

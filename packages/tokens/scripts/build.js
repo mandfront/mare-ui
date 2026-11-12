@@ -54,6 +54,12 @@ ${reset}
 ${declarations(resolved.light)}
 }
 
+/* Tema claro explícito, para uma região clara dentro de uma escura. */
+[data-theme='light'] {
+  color-scheme: light;
+${declarations(resolved.light)}
+}
+
 ${overrideBlocks(resolved)}
 `;
 }

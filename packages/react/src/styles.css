@@ -9,6 +9,25 @@
 @import 'tailwindcss/utilities.css' layer(utilities);
 @import '@mare-ui/tokens/theme.css';
 
+/*
+ * Normalização mínima, só nos elementos dos componentes. Sem o preflight, um
+ * input com largura total e padding passaria do contêiner, e títulos e
+ * parágrafos teriam as margens padrão do navegador. `:where` mantém a
+ * especificidade zero, para que as classes de quem consome sempre vençam.
+ */
+@layer base {
+  :where([data-slot]),
+  :where([data-slot]) *,
+  :where([data-slot]) ::before,
+  :where([data-slot]) ::after {
+    box-sizing: border-box;
+  }
+
+  :where(h1, h2, h3, h4, p)[data-slot] {
+    margin: 0;
+  }
+}
+
 @source './';
 @source not './**/*.test.*';
 @source not './**/*.stories.*';
