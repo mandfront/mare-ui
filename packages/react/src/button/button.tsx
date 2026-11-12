@@ -3,13 +3,14 @@ import { cva, type VariantProps } from 'class-variance-authority';
 import type { ComponentPropsWithRef } from 'react';
 
 import { cn } from '../lib/cn';
+import { focusRing } from '../lib/focus-ring';
 
 export const buttonVariants = cva(
   [
     'relative inline-flex shrink-0 cursor-pointer items-center justify-center gap-2 whitespace-nowrap select-none',
     'rounded-md border border-transparent font-sans font-semibold',
     'transition-colors duration-(--duration-fast) ease-out motion-reduce:transition-none',
-    'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus focus-visible:outline-solid',
+    focusRing,
     'data-disabled:cursor-not-allowed data-disabled:not-data-loading:opacity-50',
     'data-loading:cursor-progress',
   ],
