@@ -52,6 +52,10 @@ describe('estrutura', () => {
     }
   });
 
+  it('a escala de espaçamento tem o zero', () => {
+    expect(resolved.light['spacing-0']).toBe('0px');
+  });
+
   it('os primitivos da paleta não viram variáveis', () => {
     expect(Object.keys(resolved.light).filter((name) => name.startsWith('palette'))).toEqual([]);
   });

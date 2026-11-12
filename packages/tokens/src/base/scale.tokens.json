@@ -2,6 +2,13 @@
   "spacing": {
     "$type": "dimension",
     "$description": "Escala de 4px, em rem para respeitar o tamanho de fonte do navegador.",
+    "0": {
+      "$value": {
+        "value": 0,
+        "unit": "px"
+      },
+      "$description": "Zero. Necessário para utilitários como inset-0, p-0 e gap-0."
+    },
     "1": {
       "$value": {
         "value": 0.25,
