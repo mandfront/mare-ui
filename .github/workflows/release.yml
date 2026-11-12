@@ -25,6 +25,9 @@ jobs:
       github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    env:
+      # Os hooks de Git são para quem desenvolve; aqui o CI já validou o commit.
+      LEFTHOOK: 0
     permissions:
       contents: write # criar tags e releases
       id-token: write # Trusted Publishing (OIDC): publica sem token salvo
@@ -32,6 +35,7 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           ref: ${{ github.event.workflow_run.head_sha }}
+          fetch-depth: 0 # traz as tags, para não recriar as que já existem
       - uses: pnpm/action-setup@73e46992e05b19abd31f2f3c20e0e7370d762115 # v6.1.1
       - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
@@ -45,8 +49,9 @@ jobs:
         run: pnpm exec changeset publish
       - name: Enviar tags e criar as releases no GitHub
         run: |
+          pnpm exec changeset tag
           git push origin --tags
-          for tag in $(git tag --points-at HEAD); do
+          for tag in $(git tag -l '@mare-ui/*'); do
             gh release view "$tag" >/dev/null 2>&1 ||
               gh release create "$tag" --title "$tag" --notes "Notas desta versão no CHANGELOG.md do pacote."
           done
