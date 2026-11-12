@@ -21,12 +21,15 @@ O `styles.css` já traz os tokens, os temas e as marcas, e só os utilitários q
 
 | Componente       | Para quê                                                       |
 | ---------------- | -------------------------------------------------------------- |
+| `Avatar`         | Pessoa ou marca, com foto ou iniciais.                         |
+| `Badge`          | Uma ou duas palavras de status.                                |
 | `Button`         | Dispara uma ação. Variantes, tamanhos, estado de carregamento. |
+| `Card`           | Agrupa conteúdo relacionado, montado por partes.               |
 | `VisuallyHidden` | Texto só para leitores de tela.                                |
 
 Utilitários: `buttonVariants` (aparência de botão para links) e `cn` (junta classes e resolve conflitos de Tailwind conhecendo os nomes dos tokens).
 
-A documentação completa, com exemplos interativos, está no Storybook (`pnpm --filter docs dev`).
+A documentação completa, com exemplos interativos, está no [Storybook](https://docs-rosy-two-80.vercel.app).
 
 ## Estrutura de um componente
 

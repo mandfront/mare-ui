@@ -1,11 +1,14 @@
 # Maré UI
 
 [![CI](https://github.com/mandfront/mare-ui/actions/workflows/ci.yml/badge.svg)](https://github.com/mandfront/mare-ui/actions/workflows/ci.yml)
+[![Storybook](https://img.shields.io/badge/storybook-docs-0e6670.svg)](https://docs-rosy-two-80.vercel.app)
 [![Licença MIT](https://img.shields.io/badge/licen%C3%A7a-MIT-0e6670.svg)](LICENSE)
+
+**[Documentação e exemplos no Storybook](https://docs-rosy-two-80.vercel.app)**
 
 Design system multi-marca: uma base única de design tokens e componentes React acessíveis que servem a várias marcas ao mesmo tempo. Trocar de marca é trocar valores de tokens, nunca reescrever componentes.
 
-> **Em construção.** Fundação, [design tokens](packages/tokens), Storybook e o primeiro componente ([Button](packages/react)) estão prontos. Os demais componentes entram nas próximas etapas do [roteiro](#roteiro).
+> **Em construção.** Fundação, [design tokens](packages/tokens), Storybook e os primeiros [componentes](packages/react) estão prontos. Os demais entram nas próximas etapas do [roteiro](#roteiro).
 
 ## Princípios
 
@@ -55,7 +58,7 @@ pnpm check   # formato, lint, tipos, testes e build
 - [x] Fundação: monorepo, lint, tipos, testes, hooks de Git, CI e decisões registradas
 - [x] Tokens: formato DTCG, Style Dictionary, temas claro e escuro e marcas, com contraste testado
 - [x] Storybook com testes de interação, acessibilidade e MCP
-- [ ] Componentes: Button, TextField, Checkbox, Switch, Badge, Card, Tabs, Alert, Avatar, Dialog
+- [ ] Componentes: Button, Badge, Card e Avatar prontos; TextField, Checkbox, Switch, Tabs, Alert e Dialog a seguir
 - [ ] Primeira versão no npm e no registry shadcn
 - [ ] App de exemplo montado só com o design system
 
