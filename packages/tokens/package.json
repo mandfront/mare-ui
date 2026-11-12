@@ -1,6 +1,6 @@
 {
   "name": "@mare-ui/tokens",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Design tokens do Maré UI (cores, tipografia, espaçamento, raios) no formato W3C.",
   "license": "MIT",
   "author": "Amanda Caraça",
