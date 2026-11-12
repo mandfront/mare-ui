@@ -59,7 +59,7 @@ pnpm check   # formato, lint, tipos, testes e build
 - [x] Tokens: formato DTCG, Style Dictionary, temas claro e escuro e marcas, com contraste testado
 - [x] Storybook com testes de interação, acessibilidade e MCP
 - [x] Componentes: Button, Badge, Card, Avatar, TextField, Checkbox, Switch, Tabs, Alert e Dialog
-- [ ] Primeira versão no npm e no registry shadcn
+- [ ] Primeira versão no npm e no registry shadcn (versão 0.1.0 preparada; falta publicar)
 - [ ] App de exemplo montado só com o design system
 
 ## Contribuir

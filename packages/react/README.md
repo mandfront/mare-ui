@@ -25,6 +25,7 @@ O `styles.css` já traz os tokens, os temas e as marcas, e só os utilitários q
 | `Badge`          | Uma ou duas palavras de status.                                |
 | `Button`         | Dispara uma ação. Variantes, tamanhos, estado de carregamento. |
 | `Alert`          | Mensagem na página, sem bloquear.                              |
+| `AlertDialog`    | Confirmação de ação destrutiva; não fecha com clique fora.     |
 | `Card`           | Agrupa conteúdo relacionado, montado por partes.               |
 | `Checkbox`       | Escolha independente que vale ao enviar o formulário.          |
 | `Dialog`         | Interrompe o fluxo para uma decisão.                           |
@@ -36,6 +37,10 @@ O `styles.css` já traz os tokens, os temas e as marcas, e só os utilitários q
 Utilitários: `buttonVariants` (aparência de botão para links) e `cn` (junta classes e resolve conflitos de Tailwind conhecendo os nomes dos tokens).
 
 A documentação completa, com exemplos interativos, está no [Storybook](https://docs-rosy-two-80.vercel.app).
+
+## Server Components
+
+Todos os componentes podem ser usados direto num componente de servidor do Next.js, sem `"use client"`. `buttonVariants`, `badgeVariants` e `cn` também podem ser chamados no servidor. O estado e a interação ficam no Base UI ([ADR 0009](../../docs/decisions/0009-server-components-sem-use-client.md)).
 
 ## Estrutura de um componente
 
