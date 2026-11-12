@@ -7,6 +7,7 @@
 **Português** · [English](README.en.md)
 
 [![CI](https://github.com/mandfront/mare-ui/actions/workflows/ci.yml/badge.svg)](https://github.com/mandfront/mare-ui/actions/workflows/ci.yml)
+[![npm](https://img.shields.io/npm/v/@mare-ui/react?color=0e6670&label=npm)](https://www.npmjs.com/package/@mare-ui/react)
 [![Storybook](https://img.shields.io/badge/storybook-docs-0e6670.svg)](https://docs-rosy-two-80.vercel.app)
 [![Licença MIT](https://img.shields.io/badge/licen%C3%A7a-MIT-0e6670.svg)](LICENSE)
 
@@ -50,6 +51,25 @@ mare-ui/
 | Fluxo         | GitHub Flow, Conventional Commits, Changesets                             | [0007](docs/decisions/0007-fluxo-de-git-e-versionamento.md)         |
 | Qualidade     | TypeScript estrito, ESLint, Prettier, Vitest, Testing Library, Playwright | [CONTRIBUTING](CONTRIBUTING.md)                                     |
 
+## Usar
+
+```bash
+npm install @mare-ui/react
+```
+
+```tsx
+import '@mare-ui/react/styles.css';
+import { Button } from '@mare-ui/react';
+```
+
+Ou copie um componente como código-fonte para o seu projeto, pelo registry do shadcn:
+
+```bash
+npx shadcn@latest add mandfront/mare-ui/button
+```
+
+Com Tailwind no projeto, veja a configuração no [README do pacote](packages/react#com-tailwind-no-projeto).
+
 ## Rodar localmente
 
 Requisitos: Node 22.12 ou mais novo e pnpm via Corepack.
@@ -66,7 +86,7 @@ pnpm check   # formato, lint, tipos, testes e build
 - [x] Tokens: formato DTCG, Style Dictionary, temas claro e escuro e marcas, com contraste testado
 - [x] Storybook com testes de interação, acessibilidade e MCP
 - [x] Componentes: Button, Badge, Card, Avatar, TextField, Checkbox, Switch, Tabs, Alert e Dialog
-- [ ] Primeira versão no npm e no registry shadcn (versão 0.1.0 preparada; falta publicar)
+- [x] Primeira versão (0.1.0) no npm e no registry shadcn
 - [x] App de exemplo em Next.js montado só com o design system, testado de ponta a ponta
 
 ## Contribuir
