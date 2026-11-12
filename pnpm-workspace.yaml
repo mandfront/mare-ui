@@ -1,0 +1,18 @@
+packages:
+  - packages/*
+  - apps/*
+
+# Segurança da cadeia de dependências: só instala versões publicadas há pelo
+# menos 3 dias (em minutos), tempo para um pacote comprometido ser removido.
+minimumReleaseAge: 4320
+
+# Scripts de instalação só rodam para os pacotes aprovados aqui.
+allowBuilds:
+  lefthook: true
+
+# O eslint-plugin-jsx-a11y 6.10 ainda declara suporte só até o ESLint 9, mas
+# funciona com o 10 (as regras são exercitadas no CI). Remover quando o plugin
+# atualizar o peerDependencies.
+peerDependencyRules:
+  allowedVersions:
+    'eslint-plugin-jsx-a11y>eslint': '10'
