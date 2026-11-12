@@ -23,7 +23,7 @@ Como uma mudança vira uma versão no npm. A decisão por trás deste fluxo est�
    git commit -am "chore: versão 0.2.0"
    ```
 
-3. **No merge**, o workflow `release.yml` publica no npm o que ainda não está lá, cria as tags e as releases no GitHub.
+3. **No merge**, depois que o CI passa no commit da `main`, o workflow `release.yml` publica no npm o que ainda não está lá, cria as tags e as releases no GitHub.
 
 ## Configuração inicial (uma vez)
 
@@ -34,7 +34,8 @@ O workflow de release fica desligado até estes passos serem feitos.
 
    ```bash
    npm login
-   pnpm install && pnpm build
+   pnpm install
+   pnpm check   # formato, lint, tipos, testes, build e publint
    pnpm changeset publish
    git push origin --tags
    ```

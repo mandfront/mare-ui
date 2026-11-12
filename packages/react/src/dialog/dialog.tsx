@@ -24,7 +24,8 @@ export function Dialog(props: DialogProps) {
 
 // Nos gatilhos, o texto vai dentro do elemento de `render`, não como filho do
 // gatilho do Base UI: num Server Component o Button já chega renderizado, e
-// filhos passados por fora seriam descartados.
+// filhos passados por fora seriam descartados. Pelo mesmo motivo, tudo o que o
+// Button usa (loading, disabled, type) precisa ir para o elemento de `render`.
 
 /** Botão que abre o diálogo. Aceita as mesmas props visuais do Button. */
 export function DialogTrigger({
@@ -32,13 +33,24 @@ export function DialogTrigger({
   size,
   className,
   children,
+  loading,
+  disabled,
+  type,
   ...props
 }: ButtonProps) {
   return (
     <BaseDialog.Trigger
       {...props}
+      disabled={disabled}
       render={
-        <Button variant={variant} size={size} className={className}>
+        <Button
+          variant={variant}
+          size={size}
+          className={className}
+          loading={loading}
+          disabled={disabled}
+          type={type}
+        >
           {children}
         </Button>
       }
@@ -62,13 +74,24 @@ export function AlertDialogTrigger({
   size,
   className,
   children,
+  loading,
+  disabled,
+  type,
   ...props
 }: ButtonProps) {
   return (
     <BaseAlertDialog.Trigger
       {...props}
+      disabled={disabled}
       render={
-        <Button variant={variant} size={size} className={className}>
+        <Button
+          variant={variant}
+          size={size}
+          className={className}
+          loading={loading}
+          disabled={disabled}
+          type={type}
+        >
           {children}
         </Button>
       }
@@ -82,13 +105,24 @@ export function DialogClose({
   size,
   className,
   children,
+  loading,
+  disabled,
+  type,
   ...props
 }: ButtonProps) {
   return (
     <BaseDialog.Close
       {...props}
+      disabled={disabled}
       render={
-        <Button variant={variant} size={size} className={className}>
+        <Button
+          variant={variant}
+          size={size}
+          className={className}
+          loading={loading}
+          disabled={disabled}
+          type={type}
+        >
           {children}
         </Button>
       }
@@ -116,7 +150,7 @@ export function DialogContent({ className, children }: DialogContentProps) {
       <BaseDialog.Popup
         data-slot="dialog"
         className={cn(
-          'fixed inset-x-4 top-1/2 mx-auto flex max-w-md -translate-y-1/2 flex-col gap-3',
+          'fixed inset-x-4 top-1/2 mx-auto flex max-h-[calc(100dvh-var(--spacing-8))] max-w-md -translate-y-1/2 flex-col gap-3 overflow-y-auto overscroll-contain',
           'rounded-lg bg-surface-raised p-5 text-ink shadow-(--shadow-lg) outline-none',
           'transition-[opacity,translate] duration-(--duration-base) ease-out motion-reduce:transition-none',
           'data-ending-style:opacity-0 data-starting-style:translate-y-[calc(-50%+var(--spacing-2))] data-starting-style:opacity-0',
