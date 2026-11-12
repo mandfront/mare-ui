@@ -79,6 +79,7 @@ Para uma marca:
 ## Limitações conhecidas
 
 - **Sombras no Tailwind:** os utilitários `shadow-sm` e `shadow-lg` fixam o valor do tema claro no build. Para a sombra acompanhar o tema, use `shadow-(--shadow-sm)`.
+- **Classes fora da escala somem sem aviso:** como o tema zera a escala numérica do Tailwind, uma classe como `p-9` ou `inset-1` não é gerada e o estilo simplesmente não aparece, sem erro no build. Use só os passos da escala (`0` a `8` e `control-*`) e confira o resultado no Storybook.
 - **Durações:** o Tailwind não tem namespace de tema para duração. Use `duration-(--duration-fast)`.
 
 ## Acessibilidade
