@@ -1,0 +1,45 @@
+name: Release
+
+on:
+  push:
+    branches: [main]
+
+concurrency:
+  group: release
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    # Só publica depois que a organização no npm e o Trusted Publishing estiverem
+    # configurados (variável NPM_PUBLISH do repositório). Veja docs/publicacao.md.
+    if: vars.NPM_PUBLISH == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write # criar tags e releases
+      id-token: write # Trusted Publishing (OIDC): publica sem token salvo
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: pnpm/action-setup@73e46992e05b19abd31f2f3c20e0e7370d762115 # v6.1.1
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+      - name: Instalar dependências
+        run: pnpm install --frozen-lockfile
+      - name: Build dos pacotes
+        run: pnpm exec turbo run build --filter="./packages/*"
+      - name: Publicar versões que ainda não estão no npm
+        run: pnpm exec changeset publish
+      - name: Enviar tags e criar as releases no GitHub
+        run: |
+          git push origin --tags
+          for tag in $(git tag --points-at HEAD); do
+            gh release view "$tag" >/dev/null 2>&1 ||
+              gh release create "$tag" --title "$tag" --notes "Notas desta versão no CHANGELOG.md do pacote."
+          done
+        env:
+          GH_TOKEN: ${{ github.token }}

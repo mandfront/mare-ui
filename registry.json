@@ -1,0 +1,292 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "mare-ui",
+  "homepage": "https://docs-rosy-two-80.vercel.app",
+  "items": [
+    {
+      "name": "lib",
+      "type": "registry:item",
+      "title": "Utilitários",
+      "description": "cn (junta classes conhecendo os tokens) e o anel de foco do sistema.",
+      "dependencies": [
+        "@mare-ui/tokens",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "packages/react/src/lib/cn.ts",
+          "type": "registry:file",
+          "target": "~/components/mare-ui/lib/cn.ts"
+        },
+        {
+          "path": "packages/react/src/lib/focus-ring.ts",
+          "type": "registry:file",
+          "target": "~/components/mare-ui/lib/focus-ring.ts"
+        }
+      ]
+    },
+    {
+      "name": "alert",
+      "type": "registry:item",
+      "title": "Alert",
+      "description": "Mensagem na própria página, sem bloquear.",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "mandfront/mare-ui/lib"
+      ],
+      "files": [
+        {
+          "path": "packages/react/src/alert/alert.tsx",
+          "type": "registry:file",
+          "target": "~/components/mare-ui/alert/alert.tsx"
+        },
+        {
+          "path": "packages/react/src/alert/index.ts",
+          "type": "registry:file",
+          "target": "~/components/mare-ui/alert/index.ts"
+        }
+      ]
+    },
+    {
+      "name": "avatar",
+      "type": "registry:item",
+      "title": "Avatar",
+      "description": "Pessoa ou marca, com foto ou iniciais.",
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "mandfront/mare-ui/lib"
+      ],
+      "files": [
+        {
+          "path": "packages/react/src/avatar/avatar.tsx",
+          "type": "registry:file",
+          "target": "~/components/mare-ui/avatar/avatar.tsx"
+        },
+        {
+          "path": "packages/react/src/avatar/index.ts",
+          "type": "registry:file",
+          "target": "~/components/mare-ui/avatar/index.ts"
+        }
+      ]
+    },
+    {
+      "name": "badge",
+      "type": "registry:item",
+      "title": "Badge",
+      "description": "Uma ou duas palavras de status.",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "mandfront/mare-ui/lib"
+      ],
+      "files": [
+        {
+          "path": "packages/react/src/badge/badge.tsx",
+          "type": "registry:file",
+          "target": "~/components/mare-ui/badge/badge.tsx"
+        },
+        {
+          "path": "packages/react/src/badge/index.ts",
+          "type": "registry:file",
+          "target": "~/components/mare-ui/badge/index.ts"
+        }
+      ]
+    },
+    {
+      "name": "button",
+      "type": "registry:item",
+      "title": "Button",
+      "description": "Dispara uma ação. Variantes, tamanhos e estado de carregamento.",
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "mandfront/mare-ui/lib"
+      ],
+      "files": [
+        {
+          "path": "packages/react/src/button/button.tsx",
+          "type": "registry:file",
+          "target": "~/components/mare-ui/button/button.tsx"
+        },
+        {
+          "path": "packages/react/src/button/index.ts",
+          "type": "registry:file",
+          "target": "~/components/mare-ui/button/index.ts"
+        }
+      ]
+    },
+    {
+      "name": "card",
+      "type": "registry:item",
+      "title": "Card",
+      "description": "Agrupa conteúdo relacionado, montado por partes.",
+      "dependencies": [],
+      "registryDependencies": [
+        "mandfront/mare-ui/lib"
+      ],
+      "files": [
+        {
+          "path": "packages/react/src/card/card.tsx",
+          "type": "registry:file",
+          "target": "~/components/mare-ui/card/card.tsx"
+        },
+        {
+          "path": "packages/react/src/card/index.ts",
+          "type": "registry:file",
+          "target": "~/components/mare-ui/card/index.ts"
+        }
+      ]
+    },
+    {
+      "name": "checkbox",
+      "type": "registry:item",
+      "title": "Checkbox",
+      "description": "Escolha independente que vale ao enviar o formulário.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "mandfront/mare-ui/lib"
+      ],
+      "files": [
+        {
+          "path": "packages/react/src/checkbox/checkbox.tsx",
+          "type": "registry:file",
+          "target": "~/components/mare-ui/checkbox/checkbox.tsx"
+        },
+        {
+          "path": "packages/react/src/checkbox/index.ts",
+          "type": "registry:file",
+          "target": "~/components/mare-ui/checkbox/index.ts"
+        }
+      ]
+    },
+    {
+      "name": "dialog",
+      "type": "registry:item",
+      "title": "Dialog",
+      "description": "Dialog e AlertDialog: interrompem o fluxo para uma decisão.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "mandfront/mare-ui/button",
+        "mandfront/mare-ui/lib"
+      ],
+      "files": [
+        {
+          "path": "packages/react/src/dialog/dialog.tsx",
+          "type": "registry:file",
+          "target": "~/components/mare-ui/dialog/dialog.tsx"
+        },
+        {
+          "path": "packages/react/src/dialog/index.ts",
+          "type": "registry:file",
+          "target": "~/components/mare-ui/dialog/index.ts"
+        }
+      ]
+    },
+    {
+      "name": "switch",
+      "type": "registry:item",
+      "title": "Switch",
+      "description": "Liga ou desliga algo que vale na hora.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "mandfront/mare-ui/lib"
+      ],
+      "files": [
+        {
+          "path": "packages/react/src/switch/index.ts",
+          "type": "registry:file",
+          "target": "~/components/mare-ui/switch/index.ts"
+        },
+        {
+          "path": "packages/react/src/switch/switch.tsx",
+          "type": "registry:file",
+          "target": "~/components/mare-ui/switch/switch.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tabs",
+      "type": "registry:item",
+      "title": "Tabs",
+      "description": "Alterna entre vistas do mesmo conteúdo.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "mandfront/mare-ui/lib"
+      ],
+      "files": [
+        {
+          "path": "packages/react/src/tabs/index.ts",
+          "type": "registry:file",
+          "target": "~/components/mare-ui/tabs/index.ts"
+        },
+        {
+          "path": "packages/react/src/tabs/tabs.tsx",
+          "type": "registry:file",
+          "target": "~/components/mare-ui/tabs/tabs.tsx"
+        }
+      ]
+    },
+    {
+      "name": "text-field",
+      "type": "registry:item",
+      "title": "TextField",
+      "description": "Campo de texto com rótulo, dica e erro acessíveis.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "mandfront/mare-ui/lib"
+      ],
+      "files": [
+        {
+          "path": "packages/react/src/text-field/index.ts",
+          "type": "registry:file",
+          "target": "~/components/mare-ui/text-field/index.ts"
+        },
+        {
+          "path": "packages/react/src/text-field/text-field.tsx",
+          "type": "registry:file",
+          "target": "~/components/mare-ui/text-field/text-field.tsx"
+        }
+      ]
+    },
+    {
+      "name": "visually-hidden",
+      "type": "registry:item",
+      "title": "VisuallyHidden",
+      "description": "Texto só para leitores de tela.",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "packages/react/src/visually-hidden/index.ts",
+          "type": "registry:file",
+          "target": "~/components/mare-ui/visually-hidden/index.ts"
+        },
+        {
+          "path": "packages/react/src/visually-hidden/visually-hidden.tsx",
+          "type": "registry:file",
+          "target": "~/components/mare-ui/visually-hidden/visually-hidden.tsx"
+        }
+      ]
+    }
+  ]
+}

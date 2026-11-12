@@ -24,7 +24,7 @@ export interface CheckboxProps {
  * Escolha independente, ligada ou desligada, que vale ao enviar o formulário.
  * Para algo que vale na hora, use Switch.
  */
-export function Checkbox({ label, className, onCheckedChange, ...props }: CheckboxProps) {
+export function Checkbox({ label, className, ...props }: CheckboxProps) {
   return (
     <label
       data-slot="checkbox"
@@ -36,7 +36,6 @@ export function Checkbox({ label, className, onCheckedChange, ...props }: Checkb
     >
       <BaseCheckbox.Root
         {...props}
-        onCheckedChange={(checked) => onCheckedChange?.(checked)}
         className={cn(
           'flex size-5 shrink-0 items-center justify-center rounded-sm border-2 border-line-strong bg-surface-raised text-on-primary',
           'transition-colors duration-(--duration-fast) motion-reduce:transition-none',
@@ -44,34 +43,20 @@ export function Checkbox({ label, className, onCheckedChange, ...props }: Checkb
           focusRing,
         )}
       >
+        {/* Os dois desenhos ficam no DOM e o CSS escolhe qual mostrar, sem função de render. */}
         <BaseCheckbox.Indicator
           keepMounted
           className="flex data-unchecked:not-data-indeterminate:invisible"
-          render={(indicatorProps, state) => (
-            <span {...indicatorProps}>
-              <svg viewBox="0 0 16 16" aria-hidden="true" className="size-4">
-                {state.indeterminate ? (
-                  <path
-                    d="M4 8h8"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                  />
-                ) : (
-                  <path
-                    d="M3.5 8.5l3 3 6-7"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                )}
-              </svg>
-            </span>
-          )}
-        />
+        >
+          <svg
+            viewBox="0 0 16 16"
+            aria-hidden="true"
+            className="size-4 fill-none stroke-current stroke-2 [stroke-linecap:round] [stroke-linejoin:round]"
+          >
+            <path d="M3.5 8.5l3 3 6-7" className="in-data-indeterminate:hidden" />
+            <path d="M4 8h8" className="hidden in-data-indeterminate:block" />
+          </svg>
+        </BaseCheckbox.Indicator>
       </BaseCheckbox.Root>
       {label}
     </label>

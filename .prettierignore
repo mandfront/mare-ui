@@ -3,3 +3,4 @@ coverage
 .turbo
 storybook-static
 pnpm-lock.yaml
+registry.json

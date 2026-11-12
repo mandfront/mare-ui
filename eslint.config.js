@@ -33,7 +33,7 @@ export default defineConfig(
     },
   },
   {
-    files: ['packages/tokens/**/*.js'],
+    files: ['packages/tokens/**/*.js', 'scripts/**/*.js', '.changeset/**/*.js'],
     languageOptions: {
       globals: globals.node,
     },

@@ -41,7 +41,7 @@ describe('Tabs', () => {
 
     expect(screen.getByRole('tab', { name: 'Registry' })).toHaveAttribute('aria-selected', 'true');
     expect(screen.getByRole('tabpanel', { name: 'Registry' })).toBeVisible();
-    expect(onValueChange).toHaveBeenCalledWith('registry');
+    expect(onValueChange).toHaveBeenCalledWith('registry', expect.anything());
   });
 
   it('as setas movem o foco e só a aba ativa entra no Tab', async () => {

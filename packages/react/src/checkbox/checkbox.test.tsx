@@ -13,7 +13,7 @@ describe('Checkbox', () => {
 
   it('marca e desmarca com clique na caixa ou no rótulo', async () => {
     const user = userEvent.setup();
-    const onCheckedChange = vi.fn();
+    const onCheckedChange = vi.fn<(checked: boolean) => void>();
     render(<Checkbox label="Receber novidades" onCheckedChange={onCheckedChange} />);
 
     const checkbox = screen.getByRole('checkbox', { name: 'Receber novidades' });
@@ -22,7 +22,7 @@ describe('Checkbox', () => {
 
     await user.click(screen.getByText('Receber novidades'));
     expect(checkbox).not.toBeChecked();
-    expect(onCheckedChange.mock.calls).toEqual([[true], [false]]);
+    expect(onCheckedChange.mock.calls.map(([checked]) => checked)).toEqual([true, false]);
   });
 
   it('alterna com Espaço pelo teclado', async () => {

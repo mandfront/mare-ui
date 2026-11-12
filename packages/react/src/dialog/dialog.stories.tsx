@@ -4,6 +4,8 @@ import { expect, screen, userEvent, waitFor } from 'storybook/test';
 import { Button } from '../button';
 import { TextField } from '../text-field';
 import {
+  AlertDialog,
+  AlertDialogTrigger,
   Dialog,
   DialogClose,
   DialogContent,
@@ -22,7 +24,7 @@ const meta = {
     docs: {
       description: {
         component:
-          'Interrompe o fluxo para uma decisão; use pouco. O título é uma pergunta e o botão de confirmar repete o verbo ("Excluir"), nunca "Sim". O foco entra no diálogo ao abrir e volta ao gatilho ao fechar; Esc e clique fora fecham.',
+          'Interrompe o fluxo para uma decisão; use pouco. O título é uma pergunta e o botão de confirmar repete o verbo ("Excluir"), nunca "Sim". O foco entra no diálogo ao abrir e volta ao gatilho ao fechar; Esc e clique fora fecham. Para ações destrutivas ou irreversíveis, use `AlertDialog` no lugar de `Dialog`: ele é anunciado como alerta e não fecha com clique fora.',
       },
     },
   },
@@ -33,8 +35,8 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 const ExcluirRascunho = () => (
-  <Dialog>
-    <DialogTrigger>Excluir rascunho</DialogTrigger>
+  <AlertDialog>
+    <AlertDialogTrigger>Excluir rascunho</AlertDialogTrigger>
     <DialogContent>
       <DialogTitle>Excluir este rascunho?</DialogTitle>
       <DialogDescription>
@@ -45,7 +47,7 @@ const ExcluirRascunho = () => (
         <Button variant="danger">Excluir</Button>
       </DialogFooter>
     </DialogContent>
-  </Dialog>
+  </AlertDialog>
 );
 
 export const Confirmacao: Story = {
@@ -54,14 +56,14 @@ export const Confirmacao: Story = {
   play: async ({ canvas }) => {
     const trigger = canvas.getByRole('button', { name: 'Excluir rascunho' });
     await userEvent.click(trigger);
-    const dialog = await screen.findByRole('dialog', { name: 'Excluir este rascunho?' });
+    const dialog = await screen.findByRole('alertdialog', { name: 'Excluir este rascunho?' });
     // Espera a transição de abertura terminar (o diálogo nasce com opacidade 0).
     await waitFor(() => expect(dialog).toBeVisible());
     // O fundo escurecido cobre a tela inteira.
     const backdrop = document.querySelector('[data-slot="dialog-backdrop"]');
     await expect(backdrop?.getBoundingClientRect().width).toBe(window.innerWidth);
     await userEvent.keyboard('{Escape}');
-    await waitFor(() => expect(screen.queryByRole('dialog')).not.toBeInTheDocument());
+    await waitFor(() => expect(screen.queryByRole('alertdialog')).not.toBeInTheDocument());
     await expect(trigger).toHaveFocus();
   },
 };

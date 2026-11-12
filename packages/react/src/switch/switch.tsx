@@ -17,7 +17,7 @@ export interface SwitchProps {
 }
 
 /** Liga ou desliga algo que vale na hora, sem botão de salvar. */
-export function Switch({ label, className, onCheckedChange, ...props }: SwitchProps) {
+export function Switch({ label, className, ...props }: SwitchProps) {
   return (
     <label
       data-slot="switch"
@@ -29,7 +29,6 @@ export function Switch({ label, className, onCheckedChange, ...props }: SwitchPr
     >
       <BaseSwitch.Root
         {...props}
-        onCheckedChange={(checked) => onCheckedChange?.(checked)}
         className={cn(
           'flex h-5 w-control-md shrink-0 items-center rounded-full bg-surface-sunken px-1 inset-ring-2 inset-ring-line-strong',
           'transition-colors duration-(--duration-fast) motion-reduce:transition-none',
