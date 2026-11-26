@@ -47,6 +47,6 @@
   },
   "devDependencies": {
     "style-dictionary": "^5.8.0",
-    "vitest": "^5.1.0"
+    "vitest": "^5.1.1"
   }
 }
